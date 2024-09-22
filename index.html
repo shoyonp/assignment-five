@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment Five</title>
-</head>
-<body>
-    
-</body>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisy ui and tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .font-lexend {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "btn-primary": "rgba(180, 244, 97)",
+              "btn-secondary": "rgba(17, 17, 17, 0.3)",
+              border: "rgba(17, 17, 17, 0.1)",
+              amount: "rgba(17, 17, 17, 0.05)",
+              secondary: "rgba(17, 17, 17, 0.7)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <header>
+      <!-- nav section -->
+      <nav class="bg-[#F9F7F3] px-5 py-4">
+        <div class="flex place-content-between mb-7">
+          <button
+            class="bg-btn-primary font-semibold text-xl py-3 px-8 rounded-lg"
+          >
+            Blog
+          </button>
+          <div class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="" />
+            <h1 class="font-semibold text-xl sm:text-center">Donate Bangladesh</h1>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="assets/coin.png" alt="" />
+            <h1 class="font-semibold text-xl"><span>5500</span> BDT</h1>
+          </div>
+        </div>
+      </nav>
+      <!-- donation and history button -->
+      <div class="mt-7 flex items-center gap-4 w-full justify-center">
+        <button
+          class="bg-btn-primary hover:bg-[#C1ED88] font-semibold text-xl py-3 px-8 border rounded-lg"
+        >
+          Donation
+        </button>
+        <button
+          class="border-btn-secondary hover:bg-gray-300 font-semibold text-xl py-3 px-8 border rounded-lg"
+        >
+          History
+        </button>
+      </div>
+    </header>
+  </body>
 </html>
