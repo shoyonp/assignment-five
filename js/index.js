@@ -1,0 +1,74 @@
+document.getElementById("blog-page").addEventListener("click", function () {
+  console.log("hello");
+  window.location.href = "/blog.html";
+});
+// document.getElementById('home-page').addEventListener('click',function(){
+//     console.log('hello');
+// })
+
+// donation section
+
+function getInputFieldValueById(id) {
+  const inputValue = parseFloat(document.getElementById(id).value);
+  return inputValue;
+}
+
+function getTextFieldValueById(id) {
+  const textField = parseFloat(document.getElementById(id).innerText);
+  return textField;
+}
+
+document
+  .getElementById("donate-for-noakhali")
+  .addEventListener("click", function () {
+    const addMoney = getInputFieldValueById("noakhali-donation");
+    const getBalance = getTextFieldValueById("noakhali-balance");
+    const Balance = getTextFieldValueById("balance");
+
+    if (!isNaN(addMoney) && addMoney > 0) {
+      let newBalance = addMoney + getBalance;
+      let mainBalance = Balance - addMoney;
+      document.getElementById("noakhali-balance").innerText = newBalance;
+      document.getElementById("balance").innerText = mainBalance;
+    } else {
+      alert("Invalid Donation amount");
+    }
+
+    // history section
+
+    const historyItem = document.createElement("div");
+    historyItem.className = "p-4 rounded-lg border";
+
+    historyItem.innerHTML = `
+    <p class="text-lg font-medium">${addMoney} Taka is Donated for disaster at Bangladesh</p>
+    <p class="font-light text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    `;
+
+    const historyContainer = document.getElementById("history-list");
+
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+  });
+
+//   histor tab funtionality
+const historyBtn = document.getElementById("history-btn");
+const donationBtn = document.getElementById("donation-btn");
+historyBtn.addEventListener("click", function () {
+  historyBtn.classList.add("bg-btn-primary", "font-semibold", "border-none");
+  donationBtn.classList.remove(
+    "bg-btn-primary",
+    "font-semibold",
+    "border-none"
+  );
+
+  document.getElementById("main-content").classList.add("hidden");
+  document.getElementById("history-section").classList.remove("hidden");
+});
+
+// donation tab funtionality
+donationBtn.addEventListener("click", function () {
+  historyBtn.classList.remove("bg-btn-primary", "font-semibold", "border-none");
+  donationBtn.classList.add("bg-btn-primary", "font-semibold", "border-none");
+
+  document.getElementById("main-content").classList.remove("hidden");
+  document.getElementById("history-section").classList.add("hidden");
+});

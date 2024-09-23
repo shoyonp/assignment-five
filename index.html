@@ -50,6 +50,7 @@
       <nav class="bg-nav px-5 py-4">
         <div class="flex place-content-between mb-7">
           <button
+          id="blog-page"
             class="bg-btn-primary font-semibold text-xl py-3 px-8 rounded-lg"
           >
             Blog
@@ -62,37 +63,39 @@
           </div>
           <div class="flex items-center gap-3">
             <img src="assets/coin.png" alt="" />
-            <h1 class="font-semibold text-xl"><span>5500</span> BDT</h1>
+            <h1 class="font-semibold text-xl"><span id="balance">5500</span> BDT</h1>
           </div>
         </div>
       </nav>
       <!-- donation and history button -->
       <div class="mt-9 flex items-center gap-4 w-full justify-center p-5">
         <button
-          class="bg-btn-primary hover:bg-[#C1ED88] font-semibold text-xl py-3 px-8 border rounded-lg"
+        id="donation-btn"
+          class="bg-btn-primary font-semibold text-xl py-3 px-8 border rounded-lg"
         >
           Donation
         </button>
         <button
-          class="border-btn-secondary hover:bg-gray-300 font-semibold text-xl py-3 px-8 border rounded-lg"
+        id="history-btn"
+          class="border-btn-secondary font-semibold text-xl py-3 px-8 border rounded-lg"
         >
           History
         </button>
       </div>
     </header>
     <!-- main section -->
-    <main>
+    <main id="main-content">
       <!-- noakhali section -->
       <section class="sm:w-11/12 lg:w-10/12 mx-auto mb-8 border-border border-red-400">
         <div class=" border border-border rounded-2xl">
           <div class="flex gap-6 p-5 flex-col lg:flex-row">
-            <img src="assets/feni.png" class="max-w-sm rounded-lg shadow-2xl" />
+            <img src="assets/noakhali.png" class="max-w-sm rounded-lg shadow-2xl" />
             <div>
               <div
                 class="flex items-center gap-2 bg-amount rounded-lg p-1 lg:w-2/12 mb-4"
               >
                 <img src="assets/coin.png" alt="" />
-                <h1 class="text-secondary text-base"><span>600 </span>BDT</h1>
+                <h1 class="text-secondary text-base"><span id="noakhali-balance">600 </span>BDT</h1>
               </div>
               <h1 class="text-xl font-bold">
                 Donate for Flood at Noakhali, Bangladesh
@@ -110,11 +113,13 @@
               <div class="mb-4">
                 <input
                   type="text"
+                  id="noakhali-donation"
                   placeholder="Write Donation Amount"
                   class="w-full p-3 rounded-lg font-light border border-border rounded-lg"
                 />
               </div>
               <button
+              id="donate-for-noakhali"
                 class="bg-btn-primary w-full font-semibold text-xl py-3 px-8 border rounded-lg"
               >
                 Donate Now
@@ -167,7 +172,7 @@
         </div>
       </section>
       <!-- quota section -->
-      <section class="sm:w-11/12 lg:w-10/12 mx-auto">
+      <section class="sm:w-11/12 lg:w-10/12 mx-auto mb-8">
         <div class="border border-border rounded-2xl">
           <div class="flex gap-6 p-5 flex-col lg:flex-row">
             <img
@@ -214,5 +219,20 @@
         </div>
       </section>
     </main>
+     <!-- history section -->
+     <div id="history-section" class="hidden sm:w-11/12 lg:w-10/12 mx-auto mb-8">
+        <div id="history-list"></div>
+      </div>
+      <!-- alert card -->
+       <div class="hidden sm:w-2/12 lg:w-3/12 lg:mx-auto">
+        <div class="bg-gray-100 rounded-xl flex flex-col items-center p-3">
+            <h1 class="text-2xl font-extrabold my-2">Congrates!</h1>
+            <img src="assets/coin.png" alt="">
+            <p class="text-base font-light my-2">You Have Donated for Humankind</p>
+            <h3 class="my-2 text-lg font-semibold">Successfully</h3>
+            <button class="bg-amount rounded-lg p-3 my-2">close confirmation</button>
+        </div>
+       </div>
+    <script src="js/index.js"></script>
   </body>
 </html>
