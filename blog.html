@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisy ui and tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .font-lexend {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "btn-primary": "rgba(180, 244, 97)",
+              secondary: "rgba(17, 17, 17, 0.7)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header class="mb-6">
+      <!-- nav section -->
+      <nav class="bg-[#F9F7F3] px-5 py-4">
+        <div class="flex place-content-between mb-7">
+          <button
+            class="bg-btn-primary font-semibold text-xl py-3 px-8 rounded-lg"
+          >
+            Home
+          </button>
+          <div class="flex items-center gap-3">
+            <img src="assets/logo.png" alt="" />
+            <h1 class="font-semibold text-xl sm:hidden lg:contents">
+              Donate Bangladesh
+            </h1>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="assets/coin.png" alt="" />
+            <h1 class="font-semibold text-xl"><span>5500</span> BDT</h1>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- main section -->
+    <main>
+      <!-- FAQ section -->
+      <section class="w-4/5 mx-auto">
+        <h1 class="text-3xl font-extrabold mb-4">Important FAQ</h1>
+        <!-- questions -->
+        <div
+          tabindex="0"
+          class="collapse collapse-arrow border-base-300 bg-base-200 border"
+        >
+          <div class="collapse-title text-lg font-medium">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>
+              The Document Object Model (DOM) is a programming interface for web
+              documents.
+            </p>
+          </div>
+        </div>
+        <!-- questions -->
+        <div
+          tabindex="0"
+          class="collapse collapse-arrow border-base-300 bg-base-200 border"
+        >
+          <div class="collapse-title text-lg font-medium">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>
+              I can select an element by using
+              getElementById,getElementsByClassName,getElementsByTagName,querySelector,querySelectorAll,parentNode,childNodes,firstChild
+              and lastChild. By using those I can select an element
+            </p>
+          </div>
+        </div>
+        <!-- questions -->
+        <div
+          tabindex="0"
+          class="collapse collapse-arrow border-base-300 bg-base-200 border"
+        >
+          <div class="collapse-title text-lg font-medium">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </div>
+          <div class="collapse-content">
+            <p>
+              the process of using event propagation (bubbling) to handle events
+              at a higher level in the DOM than the element on which the event
+              originated. It's very useful for 1.Handling clicks on lists,
+              buttons, or menus. 2.Managing forms where new input fields might
+              be added dynamically. 3.Creating more efficient interactive
+              components, such as galleries or modals.
+            </p>
+          </div>
+        </div>
+        <!-- questions -->
+        <div
+          tabindex="0"
+          class="collapse collapse-arrow border-base-300 bg-base-200 border"
+        >
+          <div class="collapse-title text-lg font-medium">
+            How do you manipulate an element's attributes and style using the
+            DOM?
+          </div>
+          <div class="collapse-content">
+            <p>
+              Changing an element's style (CSS) attributes is one of the ways in
+              which the DOM can be used. For example, the onfocus event handler
+              method is used to change the input element's style when the user
+              clicks inside it. When this event occurs, the element's background
+              color will change to purple.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
