@@ -10,6 +10,7 @@ function getTextFieldValueById(id) {
   return textField;
 }
 
+
 // noakhali
 document
   .getElementById("donate-for-noakhali")
@@ -18,16 +19,16 @@ document
     const getBalance = getTextFieldValueById("noakhali-balance");
     const Balance = getTextFieldValueById("balance");
 
-    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney <= Balance) {
       let newBalance = addMoney + getBalance;
       let mainBalance = Balance - addMoney;
-      document.getElementById("noakhali-balance").innerText = newBalance;
-      document.getElementById("balance").innerText = mainBalance;
-
+      document.getElementById("noakhali-balance").innerText = newBalance.toFixed(2);
+      document.getElementById("balance").innerText = mainBalance.toFixed(2);
       document.getElementById('my_modal_1').showModal();
     } else {
       document.getElementById('my_modal_1').close();
       alert("Invalid Donation amount");
+      return;
     }
 
     // history section
@@ -45,6 +46,7 @@ document
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   });
 
+
 // feni
 document
   .getElementById("donate-for-feni")
@@ -53,15 +55,16 @@ document
     const getBalance = getTextFieldValueById("feni-balance");
     const Balance = getTextFieldValueById("balance");
 
-    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney <= Balance) {
       let newBalance = addMoney + getBalance;
       let mainBalance = Balance - addMoney;
-      document.getElementById("feni-balance").innerText = newBalance;
-      document.getElementById("balance").innerText = mainBalance;
+      document.getElementById("feni-balance").innerText = newBalance.toFixed(2);
+      document.getElementById("balance").innerText = mainBalance.toFixed(2);
       document.getElementById('my_modal_1').showModal()
     } else {
       document.getElementById('my_modal_1').close();
       alert("Invalid Donation amount");
+      return;
     }
 
     // history section
@@ -79,6 +82,7 @@ document
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   });
 
+
 // quota
 document
   .getElementById("donate-for-quota")
@@ -87,15 +91,16 @@ document
     const getBalance = getTextFieldValueById("quota-balance");
     const Balance = getTextFieldValueById("balance");
 
-    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney <= Balance) {
       let newBalance = addMoney + getBalance;
       let mainBalance = Balance - addMoney;
-      document.getElementById("quota-balance").innerText = newBalance;
-      document.getElementById("balance").innerText = mainBalance;
+      document.getElementById("quota-balance").innerText = newBalance.toFixed(2);
+      document.getElementById("balance").innerText = mainBalance.toFixed(2);
       document.getElementById('my_modal_1').showModal()
     } else {
       document.getElementById('my_modal_1').close();
       alert("Invalid Donation amount");
+      return;
     }
 
     // history section
