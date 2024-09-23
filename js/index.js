@@ -15,6 +15,7 @@ function getTextFieldValueById(id) {
 document
   .getElementById("donate-for-noakhali")
   .addEventListener("click", function () {
+    const empty = document.getElementById('noakhali-donation');
     const addMoney = getInputFieldValueById("noakhali-donation");
     const getBalance = getTextFieldValueById("noakhali-balance");
     const Balance = getTextFieldValueById("balance");
@@ -44,6 +45,8 @@ document
     const historyContainer = document.getElementById("history-list");
 
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+    
+    empty.value = '';
   });
 
 
@@ -51,6 +54,7 @@ document
 document
   .getElementById("donate-for-feni")
   .addEventListener("click", function () {
+    const empty = document.getElementById('feni-donation');
     const addMoney = getInputFieldValueById("feni-donation");
     const getBalance = getTextFieldValueById("feni-balance");
     const Balance = getTextFieldValueById("balance");
@@ -80,6 +84,8 @@ document
     const historyContainer = document.getElementById("history-list");
 
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+    empty.value = '';
   });
 
 
@@ -87,6 +93,7 @@ document
 document
   .getElementById("donate-for-quota")
   .addEventListener("click", function () {
+    const empty = document.getElementById('quota-donation');
     const addMoney = getInputFieldValueById("quota-donation");
     const getBalance = getTextFieldValueById("quota-balance");
     const Balance = getTextFieldValueById("balance");
@@ -116,6 +123,8 @@ document
     const historyContainer = document.getElementById("history-list");
 
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+    empty.value = '';
   });
 
 //   histor tab funtionality
