@@ -1,11 +1,3 @@
-document.getElementById("blog-page").addEventListener("click", function () {
-  console.log("hello");
-  window.location.href = "/blog.html";
-});
-// document.getElementById('home-page').addEventListener('click',function(){
-//     console.log('hello');
-// })
-
 // donation section
 
 function getInputFieldValueById(id) {
@@ -18,6 +10,7 @@ function getTextFieldValueById(id) {
   return textField;
 }
 
+// noakhali
 document
   .getElementById("donate-for-noakhali")
   .addEventListener("click", function () {
@@ -25,12 +18,15 @@ document
     const getBalance = getTextFieldValueById("noakhali-balance");
     const Balance = getTextFieldValueById("balance");
 
-    if (!isNaN(addMoney) && addMoney > 0) {
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
       let newBalance = addMoney + getBalance;
       let mainBalance = Balance - addMoney;
       document.getElementById("noakhali-balance").innerText = newBalance;
       document.getElementById("balance").innerText = mainBalance;
+
+      document.getElementById('my_modal_1').showModal();
     } else {
+      document.getElementById('my_modal_1').close();
       alert("Invalid Donation amount");
     }
 
@@ -40,7 +36,75 @@ document
     historyItem.className = "p-4 rounded-lg border";
 
     historyItem.innerHTML = `
-    <p class="text-lg font-medium">${addMoney} Taka is Donated for disaster at Bangladesh</p>
+    <p class="text-lg font-medium">${addMoney} Taka is Donated for Flood at Noakhali, Bangladesh</p>
+    <p class="font-light text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    `;
+
+    const historyContainer = document.getElementById("history-list");
+
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+  });
+
+// feni
+document
+  .getElementById("donate-for-feni")
+  .addEventListener("click", function () {
+    const addMoney = getInputFieldValueById("feni-donation");
+    const getBalance = getTextFieldValueById("feni-balance");
+    const Balance = getTextFieldValueById("balance");
+
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
+      let newBalance = addMoney + getBalance;
+      let mainBalance = Balance - addMoney;
+      document.getElementById("feni-balance").innerText = newBalance;
+      document.getElementById("balance").innerText = mainBalance;
+      document.getElementById('my_modal_1').showModal()
+    } else {
+      document.getElementById('my_modal_1').close();
+      alert("Invalid Donation amount");
+    }
+
+    // history section
+
+    const historyItem = document.createElement("div");
+    historyItem.className = "p-4 rounded-lg border";
+
+    historyItem.innerHTML = `
+    <p class="text-lg font-medium">${addMoney} Taka is Donated for Flood at Feni, Bangladesh</p>
+    <p class="font-light text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
+    `;
+
+    const historyContainer = document.getElementById("history-list");
+
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+  });
+
+// quota
+document
+  .getElementById("donate-for-quota")
+  .addEventListener("click", function () {
+    const addMoney = getInputFieldValueById("quota-donation");
+    const getBalance = getTextFieldValueById("quota-balance");
+    const Balance = getTextFieldValueById("balance");
+
+    if (!isNaN(addMoney) && addMoney > 0 && addMoney < Balance) {
+      let newBalance = addMoney + getBalance;
+      let mainBalance = Balance - addMoney;
+      document.getElementById("quota-balance").innerText = newBalance;
+      document.getElementById("balance").innerText = mainBalance;
+      document.getElementById('my_modal_1').showModal()
+    } else {
+      document.getElementById('my_modal_1').close();
+      alert("Invalid Donation amount");
+    }
+
+    // history section
+
+    const historyItem = document.createElement("div");
+    historyItem.className = "p-4 rounded-lg border";
+
+    historyItem.innerHTML = `
+    <p class="text-lg font-medium">${addMoney} Taka is Donated for Quota at, Bangladesh</p>
     <p class="font-light text-gray-500">Date: ${new Date().toLocaleDateString()}</p>
     `;
 
